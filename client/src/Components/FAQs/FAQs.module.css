@@ -1,0 +1,45 @@
+.animatedborder {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .animatedborder::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    animation: colorAnimation 5s infinite linear, glowAnimation 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes colorAnimation {
+    0% {
+      border-color: green;
+    }
+    25% {
+      border-color: blue;
+    }
+    50% {
+      border-color: green;
+    }
+    75% {
+      border-color: blue;
+    }
+    100% {
+      border-color: green;
+    }
+  }
+  
+  @keyframes glowAnimation {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+    }
+  }
